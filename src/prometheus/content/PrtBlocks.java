@@ -353,6 +353,16 @@ public class PrtBlocks implements ContentList {
                     }}
             );
         }};
+        navalFactory = new UnitFactory("naval-factory"){{
+            requirements(Category.units, with(Items.copper, 150, Items.lead, 130, Items.metaglass, 120));
+            plans = Seq.with(
+                new UnitPlan(UnitTypes.risso, 60f * 45f, with(Items.silicon, 20, Items.metaglass, 35)),
+                new UnitPlan(UnitTypes.castor, 60f * 50f, with(Items.silicon, 20, PrtItems.platinum, 10))
+            );
+            size = 3;
+            consumes.power(1.2f);
+            floating = true;
+        }};
 
     }
 }
